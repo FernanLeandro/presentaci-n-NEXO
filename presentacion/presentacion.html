@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentación Proyecto Nexo</title>
+    <!-- Reveal.js CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reset.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.css">
+    <!-- Tema oscuro base -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.min.css" id="theme">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --sena-green: #39A900;
+            --sena-green-dark: #2d8200;
+            --bg-color: #0d1117;
+            --text-color: #c9d1d9;
+            --glass-bg: rgba(20, 25, 30, 0.6);
+            --glass-border: rgba(57, 169, 0, 0.3);
+        }
+
+        body {
+            background-color: var(--bg-color);
+        }
+
+        .reveal {
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at center, #1a2315 0%, #0d1117 100%);
+            color: var(--text-color);
+        }
+
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            text-transform: none;
+            color: #ffffff;
+            letter-spacing: -1px;
+        }
+
+        .reveal h1 {
+            font-size: 2.2em;
+            text-shadow: 0 0 30px rgba(57, 169, 0, 0.5);
+            margin-bottom: 5px;
+        }
+
+        .reveal h2 {
+            color: var(--sena-green);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            text-align: left;
+            border-bottom: 2px solid rgba(57, 169, 0, 0.3);
+            padding-bottom: 5px;
+        }
+
+        /* Títulos de sección grandes centrados */
+        .section-title h2 {
+            font-size: 3em;
+            text-align: center;
+            border-bottom: none;
+            margin-bottom: 0;
+            color: #fff;
+        }
+        .section-title h3 {
+            color: var(--sena-green);
+            font-size: 1.5em;
+            margin-top: -10px;
+        }
+
+        .reveal .progress span {
+            background: var(--sena-green);
+        }
+
+        .reveal .controls {
+            color: var(--sena-green);
+        }
+
+        .nexo-logo {
+            font-size: 0.8em;
+            font-weight: 800;
+            color: #fff;
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 8px 30px;
+            border: 2px solid var(--sena-green);
+            border-radius: 50px;
+            background: linear-gradient(135deg, rgba(57,169,0,0.6) 0%, rgba(57,169,0,0.1) 100%);
+            backdrop-filter: blur(5px);
+            box-shadow: 0 4px 15px rgba(57, 169, 0, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .slide-content {
+            text-align: left;
+            font-size: 0.65em;
+            line-height: 1.5;
+        }
+
+        .slide-content p {
+            margin-bottom: 15px;
+        }
+
+        .slide-content ul {
+            margin-top: 20px;
+            display: block;
+        }
+
+        .slide-content li {
+            margin-bottom: 10px;
+            padding-left: 15px;
+            border-left: 4px solid var(--sena-green);
+            list-style-type: none;
+            background: rgba(255, 255, 255, 0.02);
+            padding: 10px 15px;
+            border-radius: 0 10px 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .slide-content li:hover {
+            background: rgba(57, 169, 0, 0.1);
+            transform: translateX(10px);
+        }
+
+        .highlight {
+            color: var(--sena-green);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--glass-border);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .flex-col {
+            flex: 1;
+        }
+
+        .corner-logo {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            width: 80px;
+            z-index: 500;
+        }
+
+        .cover-logo {
+            width: 120px;
+            margin-bottom: 10px !important;
+            filter: drop-shadow(0 0 10px rgba(255,255,255,0.2));
+        }
+
+        .toc-list {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px 15px;
+            font-size: 0.75em;
+        }
+        .toc-list li {
+            padding: 10px !important;
+            margin-bottom: 0 !important;
+            border-left: 6px solid var(--sena-green);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <!-- Logo SENA esquina inferior derecha -->
+        <img src="img/logo-sena-verde-complementario-svg-2022.svg" class="corner-logo" alt="SENA">
+
+        <div class="slides">
+            
+            <!-- Portada -->
+            <section>
+                <img src="img/logo-sena-verde-complementario-svg-2022.svg" class="cover-logo" alt="Logo SENA Central">
+                <br>
+                <div class="nexo-logo">PROYECTO NEXO</div>
+                <h1>Plataforma de Gestión Accesible</h1>
+                <p style="font-size: 1em; font-weight: 300; color: #a3b8c2; margin-bottom: 5px;">Repositorio Institucional de Proyectos</p>
+                <p style="color: var(--sena-green); font-weight: 600; font-size: 0.9em; margin-bottom: 10px;">Servicio Nacional de Aprendizaje (SENA)</p>
+                
+                <p style="font-size: 0.5em; margin-top: 20px; opacity: 0.6; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px;">
+                    Diseñado para centralizar, proteger y hacer accesibles los proyectos de la comunidad educativa.
+                </p>
+                <div style="font-size: 0.5em; margin-top: 15px; color: #a3b8c2;">
+                    <strong>Integrantes:</strong> David Gallego López y Fernan Leandro Florez<br>
+                    ADSO - Ficha 3063934
+                </div>
+            </section>
+
+            <!-- Tabla de Contenido -->
+            <section>
+                <h2>TABLA DE CONTENIDO</h2>
+                <div class="slide-content">
+                    <ul class="toc-list">
+                        <li><span class="highlight">01.</span> Introducción / Abstract</li>
+                        <li><span class="highlight">02.</span> Objetivos</li>
+                        <li><span class="highlight">03.</span> Descripción</li>
+                        <li><span class="highlight">04.</span> Justificación</li>
+                        <li><span class="highlight">05.</span> Antecedentes</li>
+                        <li><span class="highlight">06.</span> Alcance</li>
+                        <li><span class="highlight">07.</span> Arquitectura y Tecnología</li>
+                        <li><span class="highlight">08.</span> Impacto</li>
+                        <li><span class="highlight">09.</span> Recomendaciones Adicionales</li>
+                        <li><span class="highlight">10.</span> Referencias</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 01 INTRODUCCIÓN - TÍTULO -->
+            <section class="section-title">
+                <h2>01</h2>
+                <h3>Introducción</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Introducción -->
+            <section>
+                <h2>Introducción</h2>
+                <div class="glass-card slide-content">
+                    <p>El proyecto busca desarrollar una plataforma integral (<strong>Nexo</strong>) diseñada para optimizar y asegurar la gestión documental de los proyectos formativos en el SENA.</p>
+                    <p>A través de esta solución tecnológica, los aprendices e instructores podrán subir, visualizar y auditar de forma estructurada los archivos institucionales utilizando una plataforma web centralizada, segura (2FA) e inclusiva gracias a sus potentes herramientas de accesibilidad en tiempo real.</p>
+                </div>
+            </section>
+
+            <!-- Abstract -->
+            <section>
+                <h2>Abstract</h2>
+                <div class="glass-card slide-content">
+                    <p>This project develops a comprehensive platform (<strong>Nexo</strong>) designed to optimize and secure the document management of educational projects at SENA.</p>
+                    <p>Through this technological solution, apprentices and instructors can upload, view, and audit institutional files in a structured manner using a centralized, highly secure (2FA), and inclusive web platform featuring powerful real-time accessibility tools.</p>
+                </div>
+            </section>
+
+            <!-- 02 OBJETIVOS - TÍTULO -->
+            <section class="section-title">
+                <h2>02</h2>
+                <h3>Objetivos</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Objetivo General -->
+            <section>
+                <h2>Objetivo General</h2>
+                <div class="glass-card slide-content" style="font-size: 0.9em; text-align: center; padding: 50px;">
+                    <p>Desarrollar la plataforma web <strong>Nexo</strong> como una herramienta efectiva y segura para el repositorio, gestión y visualización accesible de los proyectos académicos y formativos de la comunidad del SENA.</p>
+                </div>
+            </section>
+
+            <!-- Objetivos Específicos -->
+            <section>
+                <h2>Objetivos Específicos</h2>
+                <div class="slide-content">
+                    <ul>
+                        <li><span class="highlight">01.</span> Implementar un sistema estructurado de carga y previsualización de documentos integrando almacenamiento escalable.</li>
+                        <li><span class="highlight">02.</span> Diseñar y aplicar herramientas de accesibilidad avanzadas (Aumento de Tamaño de Letra Web por DOM) para garantizar la usabilidad de usuarios con discapacidad visual.</li>
+                        <li><span class="highlight">03.</span> Establecer robustos controles de seguridad y auditoría (Autenticación de Dos Factores y Logs de actividad) para los roles administrativos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 03 DESCRIPCIÓN - TÍTULO -->
+            <section class="section-title">
+                <h2>03</h2>
+                <h3>Descripción</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Descripción -->
+            <section>
+                <h2>Descripción</h2>
+                <div class="glass-card slide-content">
+                    <p>El software <strong>Nexo</strong> está diseñado para brindar una solución integral que soluciona la dispersión de información, mejora la seguridad y fomenta la inclusión digital en la gestión de proyectos dentro de los centros de formación.</p>
+                </div>
+            </section>
+
+            <!-- Características Principales -->
+            <section>
+                <h2>Características Principales</h2>
+                <div class="slide-content">
+                    <ul>
+                        <li><span class="highlight">Gestión Documental:</span> Subida y visualización de archivos de proyectos in-app.</li>
+                        <li><span class="highlight">Seguridad Robusta:</span> Autenticación 2FA y recuperación de contraseñas.</li>
+                        <li><span class="highlight">Accesibilidad Universal:</span> Aumento de tamaño de letra en tiempo real.</li>
+                        <li><span class="highlight">Integración Cloud:</span> Conexión fluida con la API de Google Drive.</li>
+                        <li><span class="highlight">Panel de Administración:</span> Reportes consolidados y logs de actividad.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 04 JUSTIFICACIÓN - TÍTULO -->
+            <section class="section-title">
+                <h2>04</h2>
+                <h3>Justificación</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Justificación -->
+            <section>
+                <h2>Justificación</h2>
+                <div class="glass-card slide-content">
+                    <p>La preservación del trabajo y la innovación de los aprendices es fundamental para el SENA.</p>
+                    <p>La implementación de <strong>Nexo</strong> surge como una solución necesaria para evitar la pérdida de proyectos valiosos, ofreciendo un entorno auditado, seguro y alineado con los estándares actuales de inclusión digital.</p>
+                </div>
+            </section>
+
+            <!-- 05 ANTECEDENTES - TÍTULO -->
+            <section class="section-title">
+                <h2>05</h2>
+                <h3>Antecedentes</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Antecedentes -->
+            <section>
+                <h2>Antecedentes</h2>
+                <div class="slide-content">
+                    <ul>
+                        <li><span class="highlight">Dispersión de la información:</span> Proyectos históricamente almacenados en medios físicos o discos locales vulnerables.</li>
+                        <li><span class="highlight">Barreras de accesibilidad:</span> Repositorios anteriores con nula adaptabilidad para personas con discapacidad visual.</li>
+                        <li><span class="highlight">Falta de trazabilidad:</span> Carencia de registros unificados sobre la actividad y subida de proyectos.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 06 ALCANCE - TÍTULO -->
+            <section class="section-title">
+                <h2>06</h2>
+                <h3>Alcance</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Alcance -->
+            <section>
+                <h2>Alcance</h2>
+                <div class="glass-card slide-content">
+                    <p><span class="highlight">Geografía:</span> Implementación base orientada a los centros de formación del SENA.</p>
+                    <p><span class="highlight">Usuarios Objetivo:</span></p>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Aprendices:</strong> Portafolio visible y repositorio seguro.</li>
+                        <li><strong>Administradores/Instructores:</strong> Control total, reportes y revisión.</li>
+                    </ul>
+                    <p><span class="highlight">Funcionalidad:</span> Ciclo de vida completo del documento, desde la carga hasta la auditoría histórica.</p>
+                </div>
+            </section>
+
+            <!-- 07 ARQUITECTURA Y TECNOLOGÍA - TÍTULO -->
+            <section class="section-title">
+                <h2>07</h2>
+                <h3>Arquitectura y tecnología</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Componentes Principales -->
+            <section>
+                <h2>Componentes Principales</h2>
+                <div class="slide-content flex-container">
+                    <div class="flex-col">
+                        <ul>
+                            <li><span class="highlight">Frontend:</span> HTML5, CSS3, JavaScript (DOM API, MutationObserver).</li>
+                            <li><span class="highlight">Backend:</span> PHP como motor lógico estructurado.</li>
+                            <li><span class="highlight">Base de Datos:</span> MySQL relacional para trazabilidad.</li>
+                            <li><span class="highlight">Integraciones:</span> Google Drive API / OAuth2.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Característica Especial -->
+            <section>
+                <h2>Característica Especial</h2>
+                <div class="glass-card slide-content">
+                    <p>Se desarrolló un motor de <strong>Accesibilidad en Tiempo Real</strong> fundamentado en la sincronización del DOM mediante <code style="color:var(--sena-green);">MutationObserver</code> y clonación vía `iframes`, permitiendo a los usuarios con discapacidad visual interactuar con la plataforma sin pérdida de funcionalidad (Lupa Accesible).</p>
+                </div>
+            </section>
+
+            <!-- 08 IMPACTO - TÍTULO -->
+            <section class="section-title">
+                <h2>08</h2>
+                <h3>Impacto</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Impacto -->
+            <section>
+                <h2>Impacto</h2>
+                <div class="slide-content">
+                    <ul>
+                        <li><span class="highlight">Social:</span> Fomenta la inclusión digital y el aprendizaje colaborativo.</li>
+                        <li><span class="highlight">Tecnológico:</span> Estandariza la gestión de repositorios incorporando seguridad 2FA.</li>
+                        <li><span class="highlight">Ambiental:</span> Apoya la política de "Cero Papel", digitalizando procesos documentales.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Beneficios -->
+            <section>
+                <h2>Beneficios</h2>
+                <div class="glass-card slide-content">
+                    <ul>
+                        <li><strong>Para los Aprendices:</strong> Plataforma usable, portafolio demostrable y visibilidad real.</li>
+                        <li><strong>Para los Administradores:</strong> Control absoluto, logs inalterables y métricas de reportes.</li>
+                        <li><strong>Para la Comunidad:</strong> Fomento de un estándar inclusivo y seguro.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 09 RECOMENDACIONES - TÍTULO -->
+            <section class="section-title">
+                <h2>09</h2>
+                <h3>Recomendaciones adicionales</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Recomendaciones -->
+            <section>
+                <h2>Recomendaciones Adicionales</h2>
+                <div class="slide-content">
+                    <ul>
+                        <li><span class="highlight">Capacitación:</span> Talleres de onboarding sobre herramientas de accesibilidad (Lupa).</li>
+                        <li><span class="highlight">Escalabilidad:</span> Monitoreo constante del espacio en Google Drive.</li>
+                        <li><span class="highlight">Seguridad Continua:</span> Auditoría periódica de logs de acceso.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- 10 REFERENCIAS - TÍTULO -->
+            <section class="section-title">
+                <h2>10</h2>
+                <h3>Referencias</h3>
+                <p style="color: #666; font-size: 0.6em;">Servicio Nacional de Aprendizaje</p>
+            </section>
+
+            <!-- Referencias -->
+            <section>
+                <h2>Referencias</h2>
+                <div class="slide-content" style="text-align: center; margin-top: 40px;">
+                    <p style="padding: 15px; border: 1px solid rgba(57,169,0,0.3); border-radius: 8px;">Normativas de accesibilidad web <strong>(WCAG 2.1)</strong></p>
+                    <p style="padding: 15px; border: 1px solid rgba(57,169,0,0.3); border-radius: 8px;">Directrices de <strong>"Cero Papel"</strong> y Transformación Digital del Estado</p>
+                    <p style="padding: 15px; border: 1px solid rgba(57,169,0,0.3); border-radius: 8px;">Guías Oficiales del <strong>Servicio Nacional de Aprendizaje (SENA)</strong></p>
+                </div>
+                <div class="nexo-logo" style="margin-top: 40px; font-size: 1em;">¡GRACIAS!</div>
+            </section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            hash: true,
+            controls: true,
+            progress: true,
+            center: true,
+            transition: 'slide',
+            backgroundTransition: 'fade',
+            controlsTutorial: true,
+            autoAnimateEasing: 'ease-out',
+            autoAnimateDuration: 0.8,
+            autoAnimateUnmatched: false,
+            width: 1280,
+            height: 720,
+            margin: 0.04,
+            minScale: 0.1,
+            maxScale: 3.0
+        });
+    </script>
+</body>
+</html>
